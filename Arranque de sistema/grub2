@@ -2,4 +2,5 @@ Detalle de arranque del sistema
 -----------------------------------
 
 La gestión del grub de arranque se hace desde el sistema Ubuntu en la partición sda7.
-Es posible que tras actualizar alguno de los sistemas Windows se "pierda" el arrranque desde grub para lo que habría que restaurar grub con los siguientes pasos:
+Es posible que tras actualizar alguno de los sistemas Windows se "pierda" el arrranque desde grub para lo que habría que reparar grub con los siguientes pasos indicados aquí:
+Arranque de sistema/reparar grub2
