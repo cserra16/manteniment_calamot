@@ -1,17 +1,25 @@
-Arrancando desde un dispositivo (CD o USB) live hacer:
+Si se pierde el arranque desde grub2 (Ubuntu en sda7) se puede restaurar siguiendo estos pasos:
 
+Es necesario disponer de un live USB con un sistema ubuntu/lubuntu/xubuntu y arrancar desde ahí.
+
+Una vez arrancado en live desde un terminal hay que hacer lo siguiente:
+
+//revisar las particiones de disco del sistema
 sudo fdisk -l
 
+//montar el sda7 en el /mnt del sistema Linux live
 sudo mount /dev/sdaX /mnt
 
+//montar los directorios necesarios para poder hacer la restauración
 sudo mount --bind /dev /mnt/dev 
 sudo mount --bind /dev/pts /mnt/dev/pts 
 sudo mount --bind /proc /mnt/proc 
 sudo mount --bind /sys /mnt/sys
 
+//pasar a root de ese sistema
 sudo chroot /mnt
 
-
-Tras el reinicio, en nuestro Ubuntu:
-
+//hacer grub install
 grub-install --boot-directory=/boot/ --recheck /dev/sda
+
+Tras estos pasos se tendría que poder arrancar con grub2 de la manera habitual.
