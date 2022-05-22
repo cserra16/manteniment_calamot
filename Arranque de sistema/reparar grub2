@@ -1,0 +1,17 @@
+Arrancando desde un dispositivo (CD o USB) live hacer:
+
+sudo fdisk -l
+
+sudo mount /dev/sdaX /mnt
+
+sudo mount --bind /dev /mnt/dev 
+sudo mount --bind /dev/pts /mnt/dev/pts 
+sudo mount --bind /proc /mnt/proc 
+sudo mount --bind /sys /mnt/sys
+
+sudo chroot /mnt
+
+
+Tras el reinicio, en nuestro Ubuntu:
+
+grub-install --boot-directory=/boot/ --recheck /dev/sda
