@@ -1,3 +1,4 @@
+
 1. `bootrec /fixmbr`: Este comando escribe un MBR (Master Boot Record) compatible con Windows en la partición del sistema, sin sobrescribir la tabla de particiones existente. Es útil para reparar el MBR si está dañado.
 
 2. `bootrec /fixboot`: Escribe un nuevo sector de arranque en la partición del sistema para reemplazar uno dañado. Esto es útil si el sector de arranque ha sido dañado por un virus o por un problema de software.
