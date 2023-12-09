@@ -1,0 +1,15 @@
+1. `bootrec /fixmbr`: Este comando escribe un MBR (Master Boot Record) compatible con Windows en la partición del sistema, sin sobrescribir la tabla de particiones existente. Es útil para reparar el MBR si está dañado.
+
+2. `bootrec /fixboot`: Escribe un nuevo sector de arranque en la partición del sistema para reemplazar uno dañado. Esto es útil si el sector de arranque ha sido dañado por un virus o por un problema de software.
+
+3. `bootsect /nt60 sys`: Este comando se usa para restablecer el código de arranque del sistema para que sea compatible con BOOTMGR. El parámetro `/nt60` aplica el código de arranque para Windows Vista, 7, 8, o 10. `sys` actualiza el volumen de sistema primario.
+
+4. `bcdedit /export c:\bcdbackup`: Hace una copia de seguridad del almacén de datos de configuración de arranque (BCD) actual en el archivo `c:\bcdbackup`. Este paso es una medida preventiva antes de hacer cambios que podrían ser destructivos.
+
+5. `attrib c:\boot\bcd -h -r -s`: Cambia los atributos del archivo BCD para que no esté oculto, de solo lectura o del sistema, lo que permite que sea modificado o reemplazado.
+
+6. `ren c:\boot\bcd bcd.old`: Renombra el archivo BCD actual a `bcd.old`, permitiendo la creación de un nuevo almacén BCD sin el riesgo de sobrescribir el almacén existente.
+
+7. `bootrec /rebuildbcd`: Busca sistemas operativos compatibles con Windows que no estén incluidos en el almacén BCD y ofrece la opción de añadirlos. Este comando puede ayudar a recuperar las entradas de arranque perdidas.
+
+Estos comandos son comúnmente utilizados juntos para reparar problemas de arranque en Windows, como un MBR o BCD dañado, lo que puede prevenir que Windows se inicie correctamente.
